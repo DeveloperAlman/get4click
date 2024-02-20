@@ -1,0 +1,150 @@
+// Icons on offers
+.icon--new,
+.icon--limitedTime,
+.icon--trend {
+    width: 35px;
+    height: 35px;
+
+    @media screen and (max-width:481px) {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+.icon--new {
+    position: relative;
+
+    &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 8px;
+        background: url(../img/icon--new.svg) no-repeat center;
+        background-size: cover;
+
+        @media screen and (max-width:481px) {
+            border-radius: 2px;
+        }
+    }
+}
+
+.icon--limitedTime {
+    position: relative;
+
+    &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 8px;
+        background: url(../img/icon--limitedTime.svg) no-repeat center;
+        background-size: cover;
+
+        @media screen and (max-width:481px) {
+            border-radius: 2px;
+        }
+    }
+}
+
+.icon--trend {
+    position: relative;
+
+    &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 8px;
+        background: url(../img/icon--trend.svg) no-repeat center;
+        background-size: cover;
+
+        @media screen and (max-width:481px) {
+            border-radius: 2px;
+        }
+    }
+}
+
+//------------------------------------
+
+// Badges on offers
+.badge-discount-70::before {
+    content: "Скидка до 70%";
+    display: block;
+}
+
+.badge-discount-25::before {
+    content: "Скидка 25%";
+    display: block;
+}
+
+.badge-discount-35::before {
+    content: "Скидка 35%";
+    display: block;
+}
+
+.badge-365-withoutPercent::before {
+    content: "365 без процентов";
+    display: block;
+}
+
+.badge-cashback-5000::before {
+    content: "Кешбэк 5000₽";
+    display: block;
+}
+
+.badge-cashback-10::before {
+    content: "Кешбэк 10%";
+    display: block;
+}
+
+.badge-discount-55::before {
+    content: "Курс и скидка до 55%";
+    display: block;
+}
+
+.badge-discount-300::before {
+    content: "Скидка 300Р";
+    display: block;
+}
+
+.badge-discount-8::before {
+    content: "Скидка 8%";
+    display: block;
+}
+
+.badge-discount-15::before {
+    content: "Скидка 15%";
+    display: block;
+}
+
+.badge-90-days::before {
+    content: "90 дней бесплатно";
+    display: block;
+}
+
+.badge-discount-500::before {
+    content: "Скидка 500Р";
+    display: block;
+}
+
+.badge-discount-750::before {
+    content: "Скидка 750Р";
+    display: block;
+}
+
+.badge-discount-200::before {
+    content: "Скидка 200Р";
+    display: block;
+}
+
+.badge-gift::before {
+    content: "Подарок";
+    display: block;
+}

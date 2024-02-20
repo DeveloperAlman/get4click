@@ -1,0 +1,35 @@
+.coupons-nav {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 260px;
+    display: flex;
+    border-radius: 100px;
+    margin-bottom: 12px;
+    gap: 32px;
+    padding: 16px;
+    background: white;
+    box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.149);
+
+
+    &__item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+}
+
+.coupon-nav {
+
+    &__img {
+        width: 20px;
+        height: 20px;
+    }
+
+    &__text {
+        &:nth-child(2) {
+            color: $color-grey;
+        }
+    }
+}
