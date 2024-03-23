@@ -7,16 +7,7 @@ body,
     margin: 0;
 }
 
-:where(h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    p,
-    ul,
-    ol,
-    dl):where([class]) {
+:where(h1, h2, h3, h4, h5, h6, p, ul, ol, dl):where([class]) {
     margin-block: 0;
 }
 
@@ -36,7 +27,6 @@ body,
 
 p {
     --paragraphMarginBottom: 24px;
-
     margin-block: 0;
 }
 
@@ -55,7 +45,6 @@ select,
 button {
     font: inherit;
 }
-
 
 @media (prefers-reduced-motion: reduce) {
     * {

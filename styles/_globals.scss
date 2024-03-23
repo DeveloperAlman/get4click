@@ -10,20 +10,14 @@
 html {
     font-size: 62.5%; // 1rem = 10px
     backface-visibility: hidden !important;
-    overflow: hidden;
-}
-
-html.preloaded {
-    overflow-x: hidden !important;
-    overflow-y: scroll !important;
 }
 
 body {
-    background: #F0F0F0;
+    background: #f0f0f0;
     font-size: 1.6rem;
     font-weight: 400;
     color: $color-dark;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
 }
 
 a,
@@ -70,7 +64,7 @@ address {
     margin: 0 auto;
     padding: 0 16px;
 
-    @media screen and (max-width:481px) {
+    @media screen and (max-width: 481px) {
         padding: 0 8px;
     }
 }

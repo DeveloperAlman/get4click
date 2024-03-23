@@ -1,9 +1,12 @@
 .coupons {
-
-    &__content {}
+    &__content {
+    }
 }
-
-.container {}
+.step-2-heading {
+    @media screen and (max-width: 481px) {
+        font-size: 18px !important;
+    }
+}
 
 .coupons-content {
     margin: 16px 0;
@@ -13,7 +16,7 @@
         margin-bottom: 4px;
         font-weight: 500;
 
-        @media screen and (max-width:481px) {
+        @media screen and (max-width: 481px) {
             font-size: 24px;
         }
     }
@@ -24,7 +27,7 @@
         font-style: normal;
         line-height: 120%;
 
-        @media screen and (max-width:481px) {
+        @media screen and (max-width: 481px) {
             font-size: 14px;
         }
     }
@@ -35,22 +38,20 @@
 }
 
 .coupons {
-
     &__filter {
         background: white;
         cursor: pointer;
         box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.01);
-        transition: all 0.3s ease;
+        transition: all 0.4s ease;
 
         &:is(:hover, :focus-visible) {
             box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.03);
         }
 
-        @media screen and (max-width:481px) {
+        @media screen and (max-width: 481px) {
             box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.01) !important;
         }
     }
-
 }
 
 .filter-coupon {
@@ -60,14 +61,16 @@
     padding: 16px;
     border-radius: 16px;
 
-    @media screen and (max-width:481px) {
+    @media screen and (max-width: 481px) {
         border-radius: 8px;
         padding: 16px 8px;
     }
 
-    &__item {}
+    &__item {
+    }
 
-    &__categories {}
+    &__categories {
+    }
 }
 
 .filter {
@@ -76,7 +79,7 @@
     gap: 8px;
 
     &__img {
-        @media screen and (max-width:481px) {
+        @media screen and (max-width: 481px) {
             width: 20px;
             height: 20px;
         }
@@ -85,7 +88,7 @@
             width: 30px;
             height: 30px;
 
-            @media screen and (max-width:481px) {
+            @media screen and (max-width: 481px) {
                 width: 100%;
                 height: 100%;
             }
@@ -97,56 +100,50 @@
         text-align: center;
         font-weight: 500;
 
-        @media screen and (max-width:481px) {
+        @media screen and (max-width: 481px) {
             font-size: 16px;
         }
     }
 }
 
 .categories-filter {
-
     &__text {
         color: $color-grey;
 
-        @media screen and (max-width:481px) {
+        @media screen and (max-width: 481px) {
             font-size: 14px;
         }
     }
 
-    &__counter {}
+    &__counter {
+    }
 }
 
 .coupons {
-
-    &__categories {}
+    &__categories {
+    }
 }
 
 .category {
     height: 0;
     opacity: 0;
+    padding: 8px;
     visibility: hidden;
     background: white;
-    border-radius: 16px;
-    margin: 16px 0;
+    border-radius: 8px;
+    margin: 8px 0;
     transition: all 0.5s ease;
     box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.01);
 
     &__form {
-        position: relative;
-
-        &-decoration {
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 150px;
-            filter: grayscale(10);
-        }
     }
 
     &__list {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-        gap: 16px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        height: 250px;
+        overflow: scroll;
     }
 
     &__item {
@@ -161,7 +158,7 @@
     }
 
     &__item-label {
-        font-size: 2rem;
+        font-size: 14px;
     }
 }
 
@@ -171,25 +168,21 @@
     visibility: visible;
 }
 
-.category__item-input:checked~.category__item-label {
-    background: #0B1215;
+.category__item-input:checked ~ .category__item-label {
+    background: #0b1215;
     color: white;
 }
 
 .category__item-label {
-    border: 1px solid $color-dark;
+    border: 1px solid #0b1215;
     border-radius: 30px;
-    padding: 10px 20px;
-    color: $color-dark;
-    transition: all 0.3s ease;
+    padding: 10px;
+    color: #0b1215;
+    transition: all 0.4s ease;
     cursor: pointer;
 
     &:hover {
-        background: $color-dark;
+        background: #0b1215;
         color: white;
     }
-}
-
-.category--padding {
-    padding: 16px;
 }

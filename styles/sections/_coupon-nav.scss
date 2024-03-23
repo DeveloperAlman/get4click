@@ -3,16 +3,19 @@
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    max-width: 260px;
+    width: max-content;
     display: flex;
     border-radius: 100px;
     margin-bottom: 12px;
-    gap: 32px;
+    gap: 6px;
+    color: #0a1b20;
+    z-index: 10;
     padding: 16px;
     background: white;
     box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.149);
-
-
+    &--margin {
+        margin-right: 20px;
+    }
     &__item {
         display: flex;
         align-items: center;
@@ -21,15 +24,15 @@
 }
 
 .coupon-nav {
-
     &__img {
         width: 20px;
         height: 20px;
     }
 
     &__text {
-        &:nth-child(2) {
-            color: $color-grey;
-        }
+        color: $color-grey;
     }
+}
+.coupons-nav--active span {
+    color: #0a1b20 !important;
 }

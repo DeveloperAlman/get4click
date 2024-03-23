@@ -8,7 +8,7 @@
     padding: 16px;
     cursor: pointer;
 
-    @media screen and (max-width:481px) {
+    @media screen and (max-width: 481px) {
         border-radius: 8px;
         min-height: 100%;
         box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.01) !important;
@@ -17,14 +17,14 @@
     &::before,
     &::after {
         top: 50px;
-        content: '';
+        content: "";
         position: absolute;
         width: 30px;
         height: 30px;
-        background-color: #F0F0F0;
+        background-color: #f0f0f0;
         border-radius: 50%;
 
-        @media screen and (max-width:481px) {
+        @media screen and (max-width: 481px) {
             width: 15px;
             height: 15px;
             top: 33px;
@@ -34,7 +34,7 @@
     &::before {
         left: -20px;
 
-        @media screen and (max-width:481px) {
+        @media screen and (max-width: 481px) {
             left: -10px;
         }
     }
@@ -42,7 +42,7 @@
     &::after {
         right: -20px;
 
-        @media screen and (max-width:481px) {
+        @media screen and (max-width: 481px) {
             right: -10px;
         }
     }
@@ -52,7 +52,7 @@
     display: flex;
     flex-direction: column;
 
-    @media screen and (max-width:481px) {
+    @media screen and (max-width: 481px) {
         padding: 0;
     }
 
@@ -63,12 +63,12 @@
         align-items: center;
         padding-bottom: 16px;
 
-        @media screen and (max-width:481px) {
+        @media screen and (max-width: 481px) {
             padding: 8px;
         }
 
         &::after {
-            content: '';
+            content: "";
             position: absolute;
             bottom: 0;
             left: 0;
@@ -77,7 +77,7 @@
             background-image: linear-gradient(to right, #f0f0f0 50%, transparent 50%);
             background-size: 25px;
 
-            @media screen and (max-width:481px) {
+            @media screen and (max-width: 481px) {
                 height: 1px;
                 background-size: 15px;
             }
@@ -88,7 +88,7 @@
         display: flex;
         gap: 8px;
 
-        @media screen and (max-width:481px) {
+        @media screen and (max-width: 481px) {
             gap: 4px;
         }
     }
@@ -96,9 +96,9 @@
     &__badges {
         padding: 8px 16px;
         border-radius: 8px;
-        background: #53C2E4;
+        background: #53c2e4;
 
-        @media screen and (max-width:481px) {
+        @media screen and (max-width: 481px) {
             font-size: 16px;
             padding: 2px 8px;
             border-radius: 2px;
@@ -109,18 +109,18 @@
             align-items: center;
             gap: 8px;
 
-            @media screen and (max-width:481px) {
+            @media screen and (max-width: 481px) {
                 gap: 4px;
             }
         }
     }
 
     &__bottom {
-        @media screen and (max-width:481px) {
+        @media screen and (max-width: 481px) {
             display: flex;
         }
 
-        @media screen and (min-width:482px) {
+        @media screen and (min-width: 482px) {
             display: flex;
             flex-direction: column;
         }
@@ -128,16 +128,17 @@
 }
 
 .icons-coupon {
-
-    &__icon {}
+    &__icon {
+    }
 }
 
-.icon--new {}
+.icon--new {
+}
 
-.icon--limitedTime {}
+.icon--limitedTime {
+}
 
 .badges-coupon {
-
     &__badge {
         text-align: center;
         color: white;
@@ -149,7 +150,7 @@
     gap: 16px;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 
-    @media screen and (max-width:481px) {
+    @media screen and (max-width: 481px) {
         gap: 10px;
     }
 }
@@ -159,7 +160,7 @@
     transition: all 0.3s ease;
 
     &__content {
-        @media screen and (max-width:481px) {
+        @media screen and (max-width: 481px) {
             display: flex;
             gap: 10px;
             padding: 8px 0 8px 8px;
@@ -180,7 +181,7 @@
 .content-coupon {
     margin-top: 32px;
 
-    @media screen and (max-width:481px) {
+    @media screen and (max-width: 481px) {
         margin-top: 0;
     }
 
@@ -190,7 +191,7 @@
         width: 100%;
         min-height: 150px;
 
-        @media screen and (max-width:481px) {
+        @media screen and (max-width: 481px) {
             min-height: 100%;
             width: 95px;
             height: 50px;
@@ -203,7 +204,7 @@
         height: 80px;
         object-fit: contain;
 
-        @media screen and (max-width:481px) {
+        @media screen and (max-width: 481px) {
             width: 95px;
             height: 50px;
             object-fit: contain;
@@ -216,7 +217,7 @@
         font-weight: 500;
         min-height: 90px;
 
-        @media screen and (max-width:481px) {
+        @media screen and (max-width: 481px) {
             font-size: 14px;
             min-height: 100%;
             text-align: start;
@@ -227,8 +228,8 @@
 }
 
 .actions-coupon {
-
-    &__button {}
+    &__button {
+    }
 }
 
 .button--offer {
@@ -252,30 +253,30 @@
     justify-content: flex-end;
 
     & {
-        @media screen and (max-width:481px) {
+        @media screen and (max-width: 481px) {
             padding: 8px;
             padding-left: 16px;
         }
     }
 
     & svg {
-        @media screen and (max-width:481px) {
+        @media screen and (max-width: 481px) {
             width: 20px;
             height: 20px;
         }
     }
 
-    @media screen and (max-width:481px) {
+    @media screen and (max-width: 481px) {
         align-items: flex-end;
     }
 }
 
 .button--like.button--like-clicked svg,
 .button--like.button--like-clicked svg stroke {
-    fill: #FC493C;
-    stroke: #FC493C !important;
+    fill: #fc493c;
+    stroke: #fc493c !important;
 }
 
 .button--like-clicked {
-    stroke: #FC493C;
+    stroke: #fc493c;
 }

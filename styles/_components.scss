@@ -5,7 +5,7 @@
     width: 35px;
     height: 35px;
 
-    @media screen and (max-width:481px) {
+    @media screen and (max-width: 481px) {
         width: 25px;
         height: 25px;
     }
@@ -25,7 +25,7 @@
         background: url(../img/icon--new.svg) no-repeat center;
         background-size: cover;
 
-        @media screen and (max-width:481px) {
+        @media screen and (max-width: 481px) {
             border-radius: 2px;
         }
     }
@@ -45,7 +45,7 @@
         background: url(../img/icon--limitedTime.svg) no-repeat center;
         background-size: cover;
 
-        @media screen and (max-width:481px) {
+        @media screen and (max-width: 481px) {
             border-radius: 2px;
         }
     }
@@ -65,7 +65,7 @@
         background: url(../img/icon--trend.svg) no-repeat center;
         background-size: cover;
 
-        @media screen and (max-width:481px) {
+        @media screen and (max-width: 481px) {
             border-radius: 2px;
         }
     }
@@ -74,77 +74,92 @@
 //------------------------------------
 
 // Badges on offers
-.badge-discount-70::before {
+.badge-discount-70::before,
+.badge-discount-70--checkout::before {
     content: "Скидка до 70%";
     display: block;
 }
 
-.badge-discount-25::before {
+.badge-discount-25::before,
+.badge-discount-25--checkout::before {
     content: "Скидка 25%";
     display: block;
 }
 
-.badge-discount-35::before {
+.badge-discount-35::before,
+.badge-discount-35--checkout::before {
     content: "Скидка 35%";
     display: block;
 }
 
-.badge-365-withoutPercent::before {
+.badge-365-withoutPercent::before,
+.badge-365-withoutPercent--checkout::before {
     content: "365 без процентов";
     display: block;
 }
 
-.badge-cashback-5000::before {
+.badge-cashback-5000::before,
+.badge-cashback-5000--checkout::before {
     content: "Кешбэк 5000₽";
     display: block;
 }
 
-.badge-cashback-10::before {
+.badge-cashback-10::before,
+.badge-cashback-10--checkout::before {
     content: "Кешбэк 10%";
     display: block;
 }
 
-.badge-discount-55::before {
+.badge-discount-55::before,
+.badge-discount-55--checkout::before {
     content: "Курс и скидка до 55%";
     display: block;
 }
 
-.badge-discount-300::before {
+.badge-discount-300::before,
+.badge-discount-300--checkout::before {
     content: "Скидка 300Р";
     display: block;
 }
 
-.badge-discount-8::before {
+.badge-discount-8::before,
+.badge-discount-8--checkout::before {
     content: "Скидка 8%";
     display: block;
 }
 
-.badge-discount-15::before {
+.badge-discount-15::before,
+.badge-discount-15--checkout::before {
     content: "Скидка 15%";
     display: block;
 }
 
-.badge-90-days::before {
+.badge-90-days::before,
+.badge-90-days--checkout::before {
     content: "90 дней бесплатно";
     display: block;
 }
 
-.badge-discount-500::before {
+.badge-discount-500::before,
+.badge-discount-500--checkout::before {
     content: "Скидка 500Р";
     display: block;
 }
 
-.badge-discount-750::before {
+.badge-discount-750::before,
+.badge-discount-750--checkout::before {
     content: "Скидка 750Р";
     display: block;
 }
 
-.badge-discount-200::before {
+.badge-discount-200::before,
+.badge-discount-200--checkout::before {
     content: "Скидка 200Р";
     display: block;
 }
 
-.badge-gift::before {
+.badge-gift::before,
+.badge-gift--checkout::before {
     content: "Подарок";
     display: block;
 }

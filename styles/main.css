@@ -9,16 +9,7 @@ body,
   margin: 0;
 }
 
-:where(h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-ul,
-ol,
-dl):where([class]) {
+:where(h1, h2, h3, h4, h5, h6, p, ul, ol, dl):where([class]) {
   margin-block: 0;
 }
 
@@ -77,16 +68,10 @@ button {
 html {
   font-size: 62.5%;
   backface-visibility: hidden !important;
-  overflow: hidden;
-}
-
-html.preloaded {
-  overflow-x: hidden !important;
-  overflow-y: scroll !important;
 }
 
 body {
-  background: #F0F0F0;
+  background: #f0f0f0;
   font-size: 1.6rem;
   font-weight: 400;
   color: #141414;
@@ -218,77 +203,92 @@ address {
   }
 }
 
-.badge-discount-70::before {
+.badge-discount-70::before,
+.badge-discount-70--checkout::before {
   content: "Скидка до 70%";
   display: block;
 }
 
-.badge-discount-25::before {
+.badge-discount-25::before,
+.badge-discount-25--checkout::before {
   content: "Скидка 25%";
   display: block;
 }
 
-.badge-discount-35::before {
+.badge-discount-35::before,
+.badge-discount-35--checkout::before {
   content: "Скидка 35%";
   display: block;
 }
 
-.badge-365-withoutPercent::before {
+.badge-365-withoutPercent::before,
+.badge-365-withoutPercent--checkout::before {
   content: "365 без процентов";
   display: block;
 }
 
-.badge-cashback-5000::before {
+.badge-cashback-5000::before,
+.badge-cashback-5000--checkout::before {
   content: "Кешбэк 5000₽";
   display: block;
 }
 
-.badge-cashback-10::before {
+.badge-cashback-10::before,
+.badge-cashback-10--checkout::before {
   content: "Кешбэк 10%";
   display: block;
 }
 
-.badge-discount-55::before {
+.badge-discount-55::before,
+.badge-discount-55--checkout::before {
   content: "Курс и скидка до 55%";
   display: block;
 }
 
-.badge-discount-300::before {
+.badge-discount-300::before,
+.badge-discount-300--checkout::before {
   content: "Скидка 300Р";
   display: block;
 }
 
-.badge-discount-8::before {
+.badge-discount-8::before,
+.badge-discount-8--checkout::before {
   content: "Скидка 8%";
   display: block;
 }
 
-.badge-discount-15::before {
+.badge-discount-15::before,
+.badge-discount-15--checkout::before {
   content: "Скидка 15%";
   display: block;
 }
 
-.badge-90-days::before {
+.badge-90-days::before,
+.badge-90-days--checkout::before {
   content: "90 дней бесплатно";
   display: block;
 }
 
-.badge-discount-500::before {
+.badge-discount-500::before,
+.badge-discount-500--checkout::before {
   content: "Скидка 500Р";
   display: block;
 }
 
-.badge-discount-750::before {
+.badge-discount-750::before,
+.badge-discount-750--checkout::before {
   content: "Скидка 750Р";
   display: block;
 }
 
-.badge-discount-200::before {
+.badge-discount-200::before,
+.badge-discount-200--checkout::before {
   content: "Скидка 200Р";
   display: block;
 }
 
-.badge-gift::before {
+.badge-gift::before,
+.badge-gift--checkout::before {
   content: "Подарок";
   display: block;
 }
@@ -296,8 +296,25 @@ address {
 .header {
   background: white;
 }
+.header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
 .header__partners {
   padding: 8px 0;
+}
+
+.actions-header {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  padding: 5px;
+}
+.actions-header__back {
+  width: 20px;
 }
 
 .partners-header {
@@ -305,6 +322,7 @@ address {
   align-items: center;
   justify-content: center;
   gap: 12px;
+  margin: auto;
 }
 .partners-header__logo img {
   display: block;
@@ -318,7 +336,7 @@ address {
 }
 
 .header__timer {
-  background: #0A1B20;
+  background: #0a1b20;
   color: white;
   font-weight: 600;
   padding: 8px 0;
@@ -342,6 +360,16 @@ address {
   .timer-header__img {
     display: flex;
     width: 20px;
+  }
+}
+
+.step-2-timer {
+  position: absolute;
+}
+
+@media screen and (max-width: 481px) {
+  .step-2-heading {
+    font-size: 18px !important;
   }
 }
 
@@ -377,7 +405,7 @@ address {
   background: white;
   cursor: pointer;
   box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.01);
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
 }
 .coupons__filter:is(:hover, :focus-visible) {
   box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.03);
@@ -444,27 +472,20 @@ address {
 .category {
   height: 0;
   opacity: 0;
+  padding: 8px;
   visibility: hidden;
   background: white;
-  border-radius: 16px;
-  margin: 16px 0;
+  border-radius: 8px;
+  margin: 8px 0;
   transition: all 0.5s ease;
   box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.01);
 }
-.category__form {
-  position: relative;
-}
-.category__form-decoration {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 150px;
-  filter: grayscale(10);
-}
 .category__list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  height: 250px;
+  overflow: scroll;
 }
 .category__item {
   display: flex;
@@ -476,7 +497,7 @@ address {
   display: none;
 }
 .category__item-label {
-  font-size: 2rem;
+  font-size: 14px;
 }
 
 .category--clicked {
@@ -486,25 +507,21 @@ address {
 }
 
 .category__item-input:checked ~ .category__item-label {
-  background: #0B1215;
+  background: #0b1215;
   color: white;
 }
 
 .category__item-label {
-  border: 1px solid #141414;
+  border: 1px solid #0b1215;
   border-radius: 30px;
-  padding: 10px 20px;
-  color: #141414;
-  transition: all 0.3s ease;
+  padding: 10px;
+  color: #0b1215;
+  transition: all 0.4s ease;
   cursor: pointer;
 }
 .category__item-label:hover {
-  background: #141414;
+  background: #0b1215;
   color: white;
-}
-
-.category--padding {
-  padding: 16px;
 }
 
 .coupon {
@@ -530,7 +547,7 @@ address {
   position: absolute;
   width: 30px;
   height: 30px;
-  background-color: #F0F0F0;
+  background-color: #f0f0f0;
   border-radius: 50%;
 }
 @media screen and (max-width: 481px) {
@@ -606,7 +623,7 @@ address {
 .coupon__badges {
   padding: 8px 16px;
   border-radius: 8px;
-  background: #53C2E4;
+  background: #53c2e4;
 }
 @media screen and (max-width: 481px) {
   .coupon__badges {
@@ -763,12 +780,12 @@ address {
 
 .button--like.button--like-clicked svg,
 .button--like.button--like-clicked svg stroke {
-  fill: #FC493C;
-  stroke: #FC493C !important;
+  fill: #fc493c;
+  stroke: #fc493c !important;
 }
 
 .button--like-clicked {
-  stroke: #FC493C;
+  stroke: #fc493c;
 }
 
 .coupons-nav {
@@ -776,14 +793,19 @@ address {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  max-width: 260px;
+  width: max-content;
   display: flex;
   border-radius: 100px;
   margin-bottom: 12px;
-  gap: 32px;
+  gap: 6px;
+  color: #0a1b20;
+  z-index: 10;
   padding: 16px;
   background: white;
   box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.149);
+}
+.coupons-nav--margin {
+  margin-right: 20px;
 }
 .coupons-nav__item {
   display: flex;
@@ -795,8 +817,256 @@ address {
   width: 20px;
   height: 20px;
 }
-.coupon-nav__text:nth-child(2) {
+.coupon-nav__text {
   color: #a8a8a8;
+}
+
+.coupons-nav--active span {
+  color: #0a1b20 !important;
+}
+
+.checkout {
+  margin-top: 8px;
+}
+.checkout__wrapper {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+.checkout__wrapper::before, .checkout__wrapper::after {
+  top: 130px;
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: #f0f0f0;
+  border-radius: 50%;
+}
+@media screen and (max-width: 481px) {
+  .checkout__wrapper::before, .checkout__wrapper::after {
+    width: 24px;
+    height: 24px;
+    top: 120px;
+  }
+}
+.checkout__wrapper::before {
+  left: -20px;
+  z-index: 5;
+}
+@media screen and (max-width: 481px) {
+  .checkout__wrapper::before {
+    left: -15px;
+  }
+}
+.checkout__wrapper::after {
+  right: -20px;
+  z-index: 5;
+}
+@media screen and (max-width: 481px) {
+  .checkout__wrapper::after {
+    right: -15px;
+  }
+}
+.checkout__top {
+  position: relative;
+}
+.top-checkout__img {
+  width: 100%;
+  height: 130px;
+  background-image: url(../../img/checkout-cover.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.top-checkout__button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 12px;
+}
+.top-checkout__button svg {
+  fill: #ffffff;
+}
+
+.body-checkout {
+  padding: 16px;
+}
+.body-checkout__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+.body-checkout__logo {
+  width: 95px;
+  height: 50px;
+  object-fit: contain;
+}
+.body-checkout__badge {
+  padding: 8px;
+  border-radius: 4px;
+  color: #53c2e4;
+  border: 1px solid #53c2e4;
+  height: max-content;
+}
+.checkout-form__title {
+  margin: 8px 0;
+}
+.checkout-form__description {
+  margin-bottom: 8px;
+}
+.checkout-form__input {
+  padding: 12px 8px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.checkout-form__input::placeholder {
+  color: #b6b6b6;
+}
+.checkout-form__conditions {
+  display: flex;
+  justify-content: space-between;
+}
+.checkout-form__button {
+  width: 100%;
+  margin-top: 8px;
+  border-radius: 8px;
+  color: #fff;
+  padding: 16px;
+  box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.2);
+  background: #b6b6b6;
+  transition: background 0.4s ease;
+  font-weight: 500;
+}
+
+.conditions-form {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: flex-start;
+}
+.conditions-form__checkbox {
+  width: 45px;
+  height: 45px;
+}
+.conditions-form__description {
+  font-size: 14px;
+  line-height: 16px;
+}
+.conditions-form__description a {
+  display: inline;
+  color: #53c2e4;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.bottom-checkout {
+  padding: 16px;
+}
+.bottom-checkout__button {
+  margin-top: 18px;
+  width: max-content;
+}
+.bottom-checkout__button a > img {
+  width: 8px;
+}
+.bottom-checkout__button a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  color: #a8a8a8;
+}
+.bottom-checkout__title {
+  margin-bottom: 16px;
+}
+.bottom-checkout__item {
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 8px;
+}
+.bottom-checkout__item span {
+  height: 100%;
+  align-items: self-end;
+  color: #53c2e4;
+  display: flex;
+  height: min-content;
+  align-self: self-start;
+  height: 22px;
+  font-size: 40px;
+}
+.bottom-checkout__description {
+  font-size: 14px;
+}
+
+#checkboxError {
+  color: #fc493c;
+  text-align: center;
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  display: none;
+}
+
+.promocode__title {
+  margin: 8px 0;
+}
+.promocode__description {
+  margin-bottom: 8px;
+}
+.promocode__distributed {
+  border: 1px dashed #b6b6b6;
+  border-radius: 8px;
+  padding: 16px;
+}
+.promocode__button {
+  width: 100%;
+  color: #0a1b20;
+  border: 1px solid #b6b6b6;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  margin-top: 8px;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+.distributed-promocode__value {
+  font-size: 26px;
+  color: #53c2e4;
+  text-align: center;
+  font-weight: 500;
+  line-height: 30px;
+  margin-bottom: 16px;
+}
+.distributed-promocode__actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: center;
+}
+.button--default,
+.button--accent {
+  border: 1px solid #b6b6b6;
+  text-align: center;
+  font-size: 16px;
+  color: #0a1b20;
+  font-weight: 500;
+  line-height: 16px;
+  border-radius: 8px;
+  width: 100%;
+  padding: 16px 0;
+}
+
+.button--accent {
+  border-color: #0a1b20;
+  background: #0a1b20;
+  color: #fff;
+  box-shadow: 0px 8px 12px 0px rgba(0, 0, 0, 0.1);
 }
 
 /* custom scrollbar */
@@ -813,7 +1083,7 @@ address {
 ::-webkit-scrollbar-thumb {
   background-color: #a8a8a8;
   border-radius: 20px;
-  border: 4px solid transparent;
+  border: 5px solid transparent;
   background-clip: content-box;
 }
 

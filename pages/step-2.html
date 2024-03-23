@@ -2,156 +2,144 @@
 <html lang="ru">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/main.css">
-    <title>Step-1</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/main.css" />
+    <title>Step-2</title>
 </head>
 
 <body>
-    <section class="preloader" data-preloader>
-        <div class="container">
-            <div class="preloader-wrapper">
-                <img src="img/get4click-logo.png" alt="" class="preloader-wrapper__img">
-            </div>
-        </div>
-    </section>
-
     <main class="page">
         <header class="header">
             <div class="container">
                 <div class="header__wrapper">
+                    <a href="../index.html" class="header__actions actions-header">
+                        <img class="actions-header__back" src="../img/arrow-back.svg" alt="">
+                    </a>
                     <div class="header__partners partners-header">
                         <div class="partners-header__logo partner-logo">
-                            <img src="img/pultru-logo.png" alt="">
+                            <img src="../img/pultru-logo.png" alt="" />
                         </div>
                         <div class="partners-header__logo get4click-logo">
-                            <img src="img/get4click-logo.png" alt="">
+                            <img src="../img/get4click-logo.png" alt="" />
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="header__timer timer-header">
-                <aside class="timer-header__wrapper">
-                    <span><img src="img/timer.png" alt="" class="timer-header__img"></span>
-                    Осталось: <span class="timer" id="timer"></span>
-                </aside>
-            </div>
+            <aside class="coupons-nav timer-header__wrapper">
+                <span><img src="../img/step-2-timer.svg" alt="" class="timer-header__img" /></span>
+                Осталось: <span class="timer" id="timer"></span>
+            </aside>
         </header>
+
+        <section class="checkout">
+            <div class="container">
+                <div class="checkout__wrapper">
+                    <div class="checkout__top top-checkout">
+                        <div class="top-checkout__img"></div>
+                        <button class="top-checkout__button actions-coupon__button button--like">
+                            <svg class="button--like-svg" width="31" height="28" viewBox="0 0 31 28" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path class="path"
+                                    d="M16.8324 26.3944C16.3549 26.563 15.5684 26.563 15.0908 26.3944C11.0178 25.004 1.91669 19.2034 1.91669 9.37196C1.91669 5.03207 5.41388 1.52083 9.72568 1.52083C12.2819 1.52083 14.5431 2.75679 15.9616 4.6669C17.3802 2.75679 19.6555 1.52083 22.1976 1.52083C26.5094 1.52083 30.0066 5.03207 30.0066 9.37196C30.0066 19.2034 20.9055 25.004 16.8324 26.3944Z"
+                                    stroke="rgba(255, 255, 255, 0.8)" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                </path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="checkout__body body-checkout">
+                        <div class="body-checkout__wrapper">
+                            <div class="body-checkout__logo">
+                                <img src="../img/alfa-bank.svg" alt="">
+                            </div>
+                            <div class="body-checkout__badge badge-discount-35--checkout"></div>
+                        </div>
+                        <form action="https://formspree.io/f/xdoqljlo" method="POST"
+                            class="body-checkout__form checkout-form" id="form">
+                            <div class="checkout-form__wrapper">
+                                <div class="checkout-form__title">
+                                    <h4>Промокод</h4>
+                                </div>
+                                <div class="checkout-form__description">
+                                    <p>Заполните форму, чтобы получить промокод</p>
+                                </div>
+                            </div>
+                            <input id="name" type="text" placeholder="Имя" class="checkout-form__input" required>
+                            <input name="email" id="email" type="email" placeholder="Email" class="checkout-form__input"
+                                required>
+                            <div class="checkout-form__conditions conditions-form">
+                                <input id="agree" class="conditions-form__checkbox" type="checkbox" required>
+                                <p class="conditions-form__description">Ознакомлен с <a
+                                        href="https://get4click.ru/policy/" target="_blank">Политикой обработки
+                                        данных</a>
+                                    и <a href="">принимаю правила пользования платформой Get4Click</a></p>
+                            </div>
+                            <button id="submitButton" class="checkout-form__button" type="submit">Получить
+                                промокод</button>
+                            <span id="checkboxError">Отметьте галочку</span>
+                        </form>
+
+                        <div class="promocode" id="promoCodeBox" style="display: none;">
+                            <h4 class="promocode__title">Промокод</h4>
+                            <p class="promocode__description">Скопируйте промокод и примените при оформления заказа</p>
+                            <div class="promocode__distributed distributed-promocode">
+                                <p class="distributed-promocode__value">G4C2000FCCJXDA</p>
+                                <div class="distributed-promocode__actions">
+                                    <button class="distributed-promocode__copy button--default"
+                                        data-clipboard-text="G4C2000FCCJXDA">Скопировать</button>
+                                    <button class="distributed-promocode__use button--accent">Применить</button>
+                                </div>
+                            </div>
+                            <a href="../index.html" class="promocode__button">Получить еще скидку</a>
+                        </div>
+
+                    </div>
+
+                    <div class="checkout__bottom bottom-checkout">
+                        <div class="bottom-checkout__title">
+                            <h4>Условия</h4>
+                        </div>
+                        <ul class="bottom-checkout__list">
+                            <li class="bottom-checkout__item">
+                                <span>.</span>
+                                <p class="bottom-checkout__description">Оформить кредитку «Год без %» до 29 декабря
+                                    включительно и покупайте со скидкой до 30% на Яндекс Маркете.</p>
+                            </li>
+                            <li class="bottom-checkout__item">
+                                <span>.</span>
+                                <p class="bottom-checkout__description">Вечное бесплатное обслуживание всем, кто оформит
+                                    карту с 1 ноября по 31 декабря. Бесплатная доставка. Снятие наличных до
+                                    50 000 ₽ в месяц без комиссии. Максимальный кредитный лимит до 500 000 рублей. До
+                                    100% в
+                                    барабане суперкэшбэка каждый
+                                    месяц.</p>
+                            </li>
+                            <li class="bottom-checkout__item">
+                                <span>.</span>
+                                <p class="bottom-checkout__description">5% в 4 категориях на выбор: супермаркеты, такси,
+                                    рестораны и другие. 1% за все остальные покупки. 0 ₽ за обслуживание в
+                                    первый год.</p>
+                            </li>
+
+                        </ul>
+                        <div class="bottom-checkout__button">
+                            <a href="#">Подробнее <img src="../img/icon-more.svg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <section class="coupons">
             <div class="container">
                 <div class="coupons__content coupons-content">
-                    <h1 class="coupons-content__heading">Выберите купон</h1>
-                    <p class="coupons-content__text">Выбирая купон, вы выражаете согласие на <a target="_blank"
-                            href="https://get4click.ru/policy/" class="coupons-content__text--link">обработку
-                            персональных
-                            данных</a>
-                    </p>
+                    <h2 class="coupons-content__heading step-2-heading">Вам может понравится</h2>
                 </div>
-
-                <div class="coupons__filter filter-coupon">
-                    <div class="filter-coupon__item filter">
-                        <div class="filter__img">
-                            <img src="img/sort.svg" alt="">
-                        </div>
-                        <p class="filter__heading">Фильтры</p>
-                    </div>
-                    <div class="filter-coupon__categories categories-filter">
-                        <p class="categories-filter__text">Выбрано: <span class="categories-filter__counter">16</span>
-                            категорий</p>
-                    </div>
-                </div>
-
-                <div class="coupons__categories category">
-                    <div class="category__form">
-                        <ul class="category__list">
-                            <li class="category__item">
-                                <input class="category__item-input" type="checkbox" name="deals" id="bestDeals">
-                                <label class="category__item-label" for="bestDeals">Лучшие предложения</label>
-                            </li>
-                            <li class="category__item">
-                                <input class="category__item-input" type="checkbox" name="banks" id="banks">
-                                <label class="category__item-label" for="banks">Банки, финансовые продукты</label>
-                            </li>
-                            <li class="category__item">
-                                <input class="category__item-input" type="checkbox" name="education" id="education">
-                                <label class="category__item-label" for="education">Обучение и курсы</label>
-                            </li>
-                            <li class="category__item">
-                                <input class="category__item-input" type="checkbox" name="films" id="films">
-                                <label class="category__item-label" for="films">Фильмы, музыка и развлечения</label>
-                            </li>
-                            <li class="category__item">
-                                <input class="category__item-input" type="checkbox" name="shoes" id="shoes">
-                                <label class="category__item-label" for="shoes">Одежда, обувь и аксессуары</label>
-                            </li>
-                            <li class="category__item">
-                                <input class="category__item-input" type="checkbox" name="beauty" id="beauty">
-                                <label class="category__item-label" for="beauty">Красота и Здоровье</label>
-                            </li>
-                            <li class="category__item">
-                                <input class="category__item-input" type="checkbox" name="productsAndAlcohol"
-                                    id="productsAndAlcohol">
-                                <label class="category__item-label" for="productsAndAlcohol">Продукты питания,
-                                    Алкоголь</label>
-                            </li>
-                            <li class="category__item">
-                                <input class="category__item-input" type="checkbox" name="sport" id="sport">
-                                <label class="category__item-label" for="sport">Спорт</label>
-                            </li>
-                            <li class="category__item">
-                                <input class="category__item-input" type="checkbox" name="kids" id="kids">
-                                <label class="category__item-label" for="kids">Все для детей</label>
-                            </li>
-                            <li class="category__item">
-                                <input class="category__item-input" type="checkbox" name="zooProducts" id="zooProducts">
-                                <label class="category__item-label" for="zooProducts">Зоотовары</label>
-                            </li>
-                            <li class="category__item">
-                                <input class="category__item-input" type="checkbox" name="forHome" id="forHome">
-                                <label class="category__item-label" for="forHome">Для дома, дачи и ремонта</label>
-                            </li>
-                            <li class="category__item">
-                                <input class="category__item-input" type="checkbox" name="carProducts" id="carProducts">
-                                <label class="category__item-label" for="carProducts">Автотовары и услуги</label>
-                            </li>
-                            <li class="category__item">
-                                <input class="category__item-input" type="checkbox" name="electronics" id="electronics">
-                                <label class="category__item-label" for="electronics">Электроника и бытовая
-                                    техника</label>
-                            </li>
-                            <li class="category__item">
-                                <input class="category__item-input" type="checkbox" name="books" id="books">
-                                <label class="category__item-label" for="books">Книги и хобби</label>
-                            </li>
-                            <li class="category__item">
-                                <input class="category__item-input" type="checkbox" name="travel" id="travel">
-                                <label class="category__item-label" for="travel">Отдых и путешествия</label>
-                            </li>
-                            <li class="category__item">
-                                <input class="category__item-input" type="checkbox" name="jewlery" id="jewlery">
-                                <label class="category__item-label" for="jewlery">Ювелирные украшения и
-                                    бижутерия</label>
-                            </li>
-                            <li class="category__item">
-                                <input class="category__item-input" type="checkbox" name="furniture" id="furniture">
-                                <label class="category__item-label" for="furniture">Мебель</label>
-                            </li>
-                            <li class="category__item">
-                                <input class="category__item-input" type="checkbox" name="adult18" id="adult18">
-                                <label class="category__item-label" for="adult18">18+</label>
-                            </li>
-                            <li class="category__item">
-                                <input class="category__item-input" type="checkbox" name="other" id="other">
-                                <label class="category__item-label" for="other">Разное</label>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
                 <div class="coupons__wrapper">
-                    <a href="pages/step-2.html" class="coupon">
+                    <a href="" class="coupon">
                         <div class="coupon__top">
                             <div class="coupon__icons icons-coupon">
                                 <div class="icons-coupon__icon icon--new"></div>
@@ -166,11 +154,13 @@
                         <div class="coupon__bottom">
                             <div class="coupon__content content-coupon">
                                 <div class="content-coupon__logo">
-                                    <img loading="lazy" class="content-coupon__logo-img" src="img/netology.svg" alt="Используйте скидки до –60% на курсы и профессии на
-                                        сайте Нетологии.">
+                                    <img loading="lazy" class="content-coupon__logo-img" src="../img/netology.svg" alt="Используйте скидки до –60% на курсы и профессии на
+                                        сайте Нетологии." />
                                 </div>
-                                <div class="content-coupon__text">Используйте скидки до –60% на курсы и профессии на
-                                    сайте Нетологии. А также примените...</div>
+                                <div class="content-coupon__text">
+                                    Используйте скидки до –60% на курсы и профессии на сайте
+                                    Нетологии. А также примените...
+                                </div>
                             </div>
                             <button class="actions-coupon__button button--like">
                                 <svg class="button--like-svg" width="31" height="28" viewBox="0 0 31 28" fill="none"
@@ -178,14 +168,13 @@
                                     <path class="path"
                                         d="M16.8324 26.3944C16.3549 26.563 15.5684 26.563 15.0908 26.3944C11.0178 25.004 1.91669 19.2034 1.91669 9.37196C1.91669 5.03207 5.41388 1.52083 9.72568 1.52083C12.2819 1.52083 14.5431 2.75679 15.9616 4.6669C17.3802 2.75679 19.6555 1.52083 22.1976 1.52083C26.5094 1.52083 30.0066 5.03207 30.0066 9.37196C30.0066 19.2034 20.9055 25.004 16.8324 26.3944Z"
                                         stroke="#A8A8A8" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                    </path>
+                                        stroke-linejoin="round"></path>
                                 </svg>
                             </button>
                         </div>
                     </a>
 
-                    <a href="pages/step-2.html" class="coupon">
+                    <a href="" class="coupon">
                         <div class="coupon__top">
                             <div class="coupon__icons icons-coupon">
                                 <div class="icons-coupon__icon icon--trend"></div>
@@ -199,10 +188,12 @@
                         <div class="coupon__bottom">
                             <div class="coupon__content content-coupon">
                                 <div class="content-coupon__logo">
-                                    <img loading="lazy" class="content-coupon__logo-img" src="img/perekrestok.svg"
-                                        alt="Скидка 25% от 3500 руб. на первые 3 покупки">
+                                    <img loading="lazy" class="content-coupon__logo-img" src="../img/perekrestok.svg"
+                                        alt="Скидка 25% от 3500 руб. на первые 3 покупки" />
                                 </div>
-                                <div class="content-coupon__text">Скидка 25% от 3500 руб. на первые 3 покупки!</div>
+                                <div class="content-coupon__text">
+                                    Скидка 25% от 3500 руб. на первые 3 покупки!
+                                </div>
                             </div>
                             <button class="actions-coupon__button button--like">
                                 <svg class="button--like-svg" width="31" height="28" viewBox="0 0 31 28" fill="none"
@@ -210,14 +201,13 @@
                                     <path class="path"
                                         d="M16.8324 26.3944C16.3549 26.563 15.5684 26.563 15.0908 26.3944C11.0178 25.004 1.91669 19.2034 1.91669 9.37196C1.91669 5.03207 5.41388 1.52083 9.72568 1.52083C12.2819 1.52083 14.5431 2.75679 15.9616 4.6669C17.3802 2.75679 19.6555 1.52083 22.1976 1.52083C26.5094 1.52083 30.0066 5.03207 30.0066 9.37196C30.0066 19.2034 20.9055 25.004 16.8324 26.3944Z"
                                         stroke="#A8A8A8" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                    </path>
+                                        stroke-linejoin="round"></path>
                                 </svg>
                             </button>
                         </div>
                     </a>
 
-                    <a href="pages/step-2.html" class="coupon">
+                    <a href="" class="coupon">
                         <div class="coupon__top">
                             <div class="coupon__icons icons-coupon">
                                 <div class="icons-coupon__icon icon--new"></div>
@@ -231,11 +221,13 @@
                         <div class="coupon__bottom">
                             <div class="coupon__content content-coupon">
                                 <div class="content-coupon__logo">
-                                    <img loading="lazy" class="content-coupon__logo-img" src="img/alfa-bank.svg" alt="Оформить кредитку «Год без %» до 29 декабря
-                                        включительно и покупайте со скидкой до 30%">
+                                    <img loading="lazy" class="content-coupon__logo-img" src="../img/alfa-bank.svg" alt="Оформить кредитку «Год без %» до 29 декабря
+                                        включительно и покупайте со скидкой до 30%" />
                                 </div>
-                                <div class="content-coupon__text">Оформить кредитку «Год без %» до 29 декабря
-                                    включительно и покупайте со скидкой до 30% н...</div>
+                                <div class="content-coupon__text">
+                                    Оформить кредитку «Год без %» до 29 декабря включительно и
+                                    покупайте со скидкой до 30% н...
+                                </div>
                             </div>
                             <button class="actions-coupon__button button--like">
                                 <svg class="button--like-svg" width="31" height="28" viewBox="0 0 31 28" fill="none"
@@ -243,14 +235,13 @@
                                     <path class="path"
                                         d="M16.8324 26.3944C16.3549 26.563 15.5684 26.563 15.0908 26.3944C11.0178 25.004 1.91669 19.2034 1.91669 9.37196C1.91669 5.03207 5.41388 1.52083 9.72568 1.52083C12.2819 1.52083 14.5431 2.75679 15.9616 4.6669C17.3802 2.75679 19.6555 1.52083 22.1976 1.52083C26.5094 1.52083 30.0066 5.03207 30.0066 9.37196C30.0066 19.2034 20.9055 25.004 16.8324 26.3944Z"
                                         stroke="#A8A8A8" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                    </path>
+                                        stroke-linejoin="round"></path>
                                 </svg>
                             </button>
                         </div>
                     </a>
 
-                    <a href="pages/step-2.html" class="coupon">
+                    <a href="" class="coupon">
                         <div class="coupon__top">
                             <div class="coupon__icons icons-coupon">
                                 <div class="icons-coupon__icon"></div>
@@ -265,11 +256,13 @@
                         <div class="coupon__bottom">
                             <div class="coupon__content content-coupon">
                                 <div class="content-coupon__logo">
-                                    <img loading="lazy" class="content-coupon__logo-img" src="img/rosbank.svg"
-                                        alt="Эксклюзивная акция Кешбэк 3000 ₽ + 2000 ₽ в «Золотом яблоке»">
+                                    <img loading="lazy" class="content-coupon__logo-img" src="../img/rosbank.svg"
+                                        alt="Эксклюзивная акция Кешбэк 3000 ₽ + 2000 ₽ в «Золотом яблоке»" />
                                 </div>
-                                <div class="content-coupon__text">Эксклюзивная акция "Кешбэк 3000 ₽ + 2000 ₽ в «Золотом
-                                    яблоке»"!</div>
+                                <div class="content-coupon__text">
+                                    Эксклюзивная акция "Кешбэк 3000 ₽ + 2000 ₽ в «Золотом
+                                    яблоке»"!
+                                </div>
                             </div>
                             <button class="actions-coupon__button button--like">
                                 <svg class="button--like-svg" width="31" height="28" viewBox="0 0 31 28" fill="none"
@@ -277,14 +270,13 @@
                                     <path class="path"
                                         d="M16.8324 26.3944C16.3549 26.563 15.5684 26.563 15.0908 26.3944C11.0178 25.004 1.91669 19.2034 1.91669 9.37196C1.91669 5.03207 5.41388 1.52083 9.72568 1.52083C12.2819 1.52083 14.5431 2.75679 15.9616 4.6669C17.3802 2.75679 19.6555 1.52083 22.1976 1.52083C26.5094 1.52083 30.0066 5.03207 30.0066 9.37196C30.0066 19.2034 20.9055 25.004 16.8324 26.3944Z"
                                         stroke="#A8A8A8" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                    </path>
+                                        stroke-linejoin="round"></path>
                                 </svg>
                             </button>
                         </div>
                     </a>
 
-                    <a href="pages/step-2.html" class="coupon">
+                    <a href="" class="coupon">
                         <div class="coupon__top">
                             <div class="coupon__icons icons-coupon">
                                 <div class="icons-coupon__icon icon--limitedTime"></div>
@@ -298,11 +290,13 @@
                         <div class="coupon__bottom">
                             <div class="coupon__content content-coupon">
                                 <div class="content-coupon__logo">
-                                    <img loading="lazy" class="content-coupon__logo-img" src="img/avon.svg" alt="Avon - это культовая продукция высокого качества: декоративная косметика,
-                                        пар">
+                                    <img loading="lazy" class="content-coupon__logo-img" src="../img/avon.svg" alt="Avon - это культовая продукция высокого качества: декоративная косметика,
+                                        пар" />
                                 </div>
-                                <div class="content-coupon__text">Avon - это культовая продукция высокого качества:
-                                    декоративная косметика, пар...</div>
+                                <div class="content-coupon__text">
+                                    Avon - это культовая продукция высокого качества:
+                                    декоративная косметика, пар...
+                                </div>
                             </div>
                             <button class="actions-coupon__button button--like">
                                 <svg class="button--like-svg" width="31" height="28" viewBox="0 0 31 28" fill="none"
@@ -310,14 +304,13 @@
                                     <path class="path"
                                         d="M16.8324 26.3944C16.3549 26.563 15.5684 26.563 15.0908 26.3944C11.0178 25.004 1.91669 19.2034 1.91669 9.37196C1.91669 5.03207 5.41388 1.52083 9.72568 1.52083C12.2819 1.52083 14.5431 2.75679 15.9616 4.6669C17.3802 2.75679 19.6555 1.52083 22.1976 1.52083C26.5094 1.52083 30.0066 5.03207 30.0066 9.37196C30.0066 19.2034 20.9055 25.004 16.8324 26.3944Z"
                                         stroke="#A8A8A8" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                    </path>
+                                        stroke-linejoin="round"></path>
                                 </svg>
                             </button>
                         </div>
                     </a>
 
-                    <a href="pages/step-2.html" class="coupon">
+                    <a href="" class="coupon">
                         <div class="coupon__top">
                             <div class="coupon__icons icons-coupon">
                                 <div class="icons-coupon__icon"></div>
@@ -332,10 +325,11 @@
                         <div class="coupon__bottom">
                             <div class="coupon__content content-coupon">
                                 <div class="content-coupon__logo">
-                                    <img loading="lazy" class="content-coupon__logo-img" src="img/uvi.svg"
-                                        alt="Скидка на покупку в ювелирном магазине Ювелирочка">
+                                    <img loading="lazy" class="content-coupon__logo-img" src="../img/uvi.svg"
+                                        alt="Скидка на покупку в ювелирном магазине Ювелирочка" />
                                 </div>
-                                <div class="content-coupon__text">Скидка на покупку в ювелирном магазине Ювелирочка
+                                <div class="content-coupon__text">
+                                    Скидка на покупку в ювелирном магазине Ювелирочка
                                 </div>
                             </div>
                             <button class="actions-coupon__button button--like">
@@ -344,14 +338,13 @@
                                     <path class="path"
                                         d="M16.8324 26.3944C16.3549 26.563 15.5684 26.563 15.0908 26.3944C11.0178 25.004 1.91669 19.2034 1.91669 9.37196C1.91669 5.03207 5.41388 1.52083 9.72568 1.52083C12.2819 1.52083 14.5431 2.75679 15.9616 4.6669C17.3802 2.75679 19.6555 1.52083 22.1976 1.52083C26.5094 1.52083 30.0066 5.03207 30.0066 9.37196C30.0066 19.2034 20.9055 25.004 16.8324 26.3944Z"
                                         stroke="#A8A8A8" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                    </path>
+                                        stroke-linejoin="round"></path>
                                 </svg>
                             </button>
                         </div>
                     </a>
 
-                    <a href="pages/step-2.html" class="coupon">
+                    <a href="" class="coupon">
                         <div class="coupon__top">
                             <div class="coupon__icons icons-coupon">
                                 <div class="icons-coupon__icon icon--new"></div>
@@ -366,11 +359,13 @@
                         <div class="coupon__bottom">
                             <div class="coupon__content content-coupon">
                                 <div class="content-coupon__logo">
-                                    <img loading="lazy" class="content-coupon__logo-img" src="img/luding.svg"
-                                        alt="Скидка 35% на широкий выбор алкогольных напитков на любой вкус!">
+                                    <img loading="lazy" class="content-coupon__logo-img" src="../img/luding.svg"
+                                        alt="Скидка 35% на широкий выбор алкогольных напитков на любой вкус!" />
                                 </div>
-                                <div class="content-coupon__text">Скидка 35% на широкий выбор алкогольных напитков на
-                                    любой вкус!</div>
+                                <div class="content-coupon__text">
+                                    Скидка 35% на широкий выбор алкогольных напитков на любой
+                                    вкус!
+                                </div>
                             </div>
                             <button class="actions-coupon__button button--like">
                                 <svg class="button--like-svg" width="31" height="28" viewBox="0 0 31 28" fill="none"
@@ -378,14 +373,13 @@
                                     <path class="path"
                                         d="M16.8324 26.3944C16.3549 26.563 15.5684 26.563 15.0908 26.3944C11.0178 25.004 1.91669 19.2034 1.91669 9.37196C1.91669 5.03207 5.41388 1.52083 9.72568 1.52083C12.2819 1.52083 14.5431 2.75679 15.9616 4.6669C17.3802 2.75679 19.6555 1.52083 22.1976 1.52083C26.5094 1.52083 30.0066 5.03207 30.0066 9.37196C30.0066 19.2034 20.9055 25.004 16.8324 26.3944Z"
                                         stroke="#A8A8A8" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                    </path>
+                                        stroke-linejoin="round"></path>
                                 </svg>
                             </button>
                         </div>
                     </a>
 
-                    <a href="pages/step-2.html" class="coupon">
+                    <a href="" class="coupon">
                         <div class="coupon__top">
                             <div class="coupon__icons icons-coupon">
                                 <div class="icons-coupon__icon icon--new"></div>
@@ -400,11 +394,13 @@
                         <div class="coupon__bottom">
                             <div class="coupon__content content-coupon">
                                 <div class="content-coupon__logo">
-                                    <img loading="lazy" class="content-coupon__logo-img" src="img/netology.svg" alt="Используйте скидки до –60% на курсы и профессии на
-                                        сайте Нетологии.">
+                                    <img loading="lazy" class="content-coupon__logo-img" src="../img/netology.svg" alt="Используйте скидки до –60% на курсы и профессии на
+                                        сайте Нетологии." />
                                 </div>
-                                <div class="content-coupon__text">Используйте скидки до –60% на курсы и профессии на
-                                    сайте Нетологии. А также примените...</div>
+                                <div class="content-coupon__text">
+                                    Используйте скидки до –60% на курсы и профессии на сайте
+                                    Нетологии. А также примените...
+                                </div>
                             </div>
                             <button class="actions-coupon__button button--like">
                                 <svg class="button--like-svg" width="31" height="28" viewBox="0 0 31 28" fill="none"
@@ -412,14 +408,13 @@
                                     <path class="path"
                                         d="M16.8324 26.3944C16.3549 26.563 15.5684 26.563 15.0908 26.3944C11.0178 25.004 1.91669 19.2034 1.91669 9.37196C1.91669 5.03207 5.41388 1.52083 9.72568 1.52083C12.2819 1.52083 14.5431 2.75679 15.9616 4.6669C17.3802 2.75679 19.6555 1.52083 22.1976 1.52083C26.5094 1.52083 30.0066 5.03207 30.0066 9.37196C30.0066 19.2034 20.9055 25.004 16.8324 26.3944Z"
                                         stroke="#A8A8A8" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                    </path>
+                                        stroke-linejoin="round"></path>
                                 </svg>
                             </button>
                         </div>
                     </a>
 
-                    <a href="pages/step-2.html" class="coupon">
+                    <a href="" class="coupon">
                         <div class="coupon__top">
                             <div class="coupon__icons icons-coupon">
                                 <div class="icons-coupon__icon icon--trend"></div>
@@ -433,10 +428,12 @@
                         <div class="coupon__bottom">
                             <div class="coupon__content content-coupon">
                                 <div class="content-coupon__logo">
-                                    <img loading="lazy" class="content-coupon__logo-img" src="img/perekrestok.svg"
-                                        alt="Скидка 25% от 3500 руб. на первые 3 покупки">
+                                    <img loading="lazy" class="content-coupon__logo-img" src="../img/perekrestok.svg"
+                                        alt="Скидка 25% от 3500 руб. на первые 3 покупки" />
                                 </div>
-                                <div class="content-coupon__text">Скидка 25% от 3500 руб. на первые 3 покупки!</div>
+                                <div class="content-coupon__text">
+                                    Скидка 25% от 3500 руб. на первые 3 покупки!
+                                </div>
                             </div>
                             <button class="actions-coupon__button button--like">
                                 <svg class="button--like-svg" width="31" height="28" viewBox="0 0 31 28" fill="none"
@@ -444,14 +441,13 @@
                                     <path class="path"
                                         d="M16.8324 26.3944C16.3549 26.563 15.5684 26.563 15.0908 26.3944C11.0178 25.004 1.91669 19.2034 1.91669 9.37196C1.91669 5.03207 5.41388 1.52083 9.72568 1.52083C12.2819 1.52083 14.5431 2.75679 15.9616 4.6669C17.3802 2.75679 19.6555 1.52083 22.1976 1.52083C26.5094 1.52083 30.0066 5.03207 30.0066 9.37196C30.0066 19.2034 20.9055 25.004 16.8324 26.3944Z"
                                         stroke="#A8A8A8" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                    </path>
+                                        stroke-linejoin="round"></path>
                                 </svg>
                             </button>
                         </div>
                     </a>
 
-                    <a href="pages/step-2.html" class="coupon">
+                    <a href="" class="coupon">
                         <div class="coupon__top">
                             <div class="coupon__icons icons-coupon">
                                 <div class="icons-coupon__icon icon--new"></div>
@@ -465,11 +461,13 @@
                         <div class="coupon__bottom">
                             <div class="coupon__content content-coupon">
                                 <div class="content-coupon__logo">
-                                    <img loading="lazy" class="content-coupon__logo-img" src="img/alfa-bank.svg" alt="Оформить кредитку «Год без %» до 29 декабря
-                                        включительно и покупайте со скидкой до 30%">
+                                    <img loading="lazy" class="content-coupon__logo-img" src="../img/alfa-bank.svg" alt="Оформить кредитку «Год без %» до 29 декабря
+                                        включительно и покупайте со скидкой до 30%" />
                                 </div>
-                                <div class="content-coupon__text">Оформить кредитку «Год без %» до 29 декабря
-                                    включительно и покупайте со скидкой до 30% н...</div>
+                                <div class="content-coupon__text">
+                                    Оформить кредитку «Год без %» до 29 декабря включительно и
+                                    покупайте со скидкой до 30% н...
+                                </div>
                             </div>
                             <button class="actions-coupon__button button--like">
                                 <svg class="button--like-svg" width="31" height="28" viewBox="0 0 31 28" fill="none"
@@ -477,14 +475,13 @@
                                     <path class="path"
                                         d="M16.8324 26.3944C16.3549 26.563 15.5684 26.563 15.0908 26.3944C11.0178 25.004 1.91669 19.2034 1.91669 9.37196C1.91669 5.03207 5.41388 1.52083 9.72568 1.52083C12.2819 1.52083 14.5431 2.75679 15.9616 4.6669C17.3802 2.75679 19.6555 1.52083 22.1976 1.52083C26.5094 1.52083 30.0066 5.03207 30.0066 9.37196C30.0066 19.2034 20.9055 25.004 16.8324 26.3944Z"
                                         stroke="#A8A8A8" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                    </path>
+                                        stroke-linejoin="round"></path>
                                 </svg>
                             </button>
                         </div>
                     </a>
 
-                    <a href="pages/step-2.html" class="coupon">
+                    <a href="" class="coupon">
                         <div class="coupon__top">
                             <div class="coupon__icons icons-coupon">
                                 <div class="icons-coupon__icon"></div>
@@ -499,12 +496,13 @@
                         <div class="coupon__bottom">
                             <div class="coupon__content content-coupon">
                                 <div class="content-coupon__logo">
-                                    <img loading="lazy" class="content-coupon__logo-img" src="img/rosbank.svg"
-                                        alt="Эксклюзивная акция Кешбэк 3000 ₽ + 2000 ₽ в «Золотом яблоке»">
+                                    <img loading="lazy" class="content-coupon__logo-img" src="../img/rosbank.svg"
+                                        alt="Эксклюзивная акция Кешбэк 3000 ₽ + 2000 ₽ в «Золотом яблоке»" />
                                 </div>
-                                <div class="content-coupon__text">Эксклюзивная акция "Кешбэк 3000 ₽ + 2000 ₽ в
-                                    «Золотом
-                                    яблоке»"!</div>
+                                <div class="content-coupon__text">
+                                    Эксклюзивная акция "Кешбэк 3000 ₽ + 2000 ₽ в «Золотом
+                                    яблоке»"!
+                                </div>
                             </div>
                             <button class="actions-coupon__button button--like">
                                 <svg class="button--like-svg" width="31" height="28" viewBox="0 0 31 28" fill="none"
@@ -512,14 +510,13 @@
                                     <path class="path"
                                         d="M16.8324 26.3944C16.3549 26.563 15.5684 26.563 15.0908 26.3944C11.0178 25.004 1.91669 19.2034 1.91669 9.37196C1.91669 5.03207 5.41388 1.52083 9.72568 1.52083C12.2819 1.52083 14.5431 2.75679 15.9616 4.6669C17.3802 2.75679 19.6555 1.52083 22.1976 1.52083C26.5094 1.52083 30.0066 5.03207 30.0066 9.37196C30.0066 19.2034 20.9055 25.004 16.8324 26.3944Z"
                                         stroke="#A8A8A8" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                    </path>
+                                        stroke-linejoin="round"></path>
                                 </svg>
                             </button>
                         </div>
                     </a>
 
-                    <a href="pages/step-2.html" class="coupon">
+                    <a href="" class="coupon">
                         <div class="coupon__top">
                             <div class="coupon__icons icons-coupon">
                                 <div class="icons-coupon__icon icon--limitedTime"></div>
@@ -533,11 +530,13 @@
                         <div class="coupon__bottom">
                             <div class="coupon__content content-coupon">
                                 <div class="content-coupon__logo">
-                                    <img loading="lazy" class="content-coupon__logo-img" src="img/avon.svg" alt="Avon - это культовая продукция высокого качества: декоративная косметика,
-                                        пар">
+                                    <img loading="lazy" class="content-coupon__logo-img" src="../img/avon.svg" alt="Avon - это культовая продукция высокого качества: декоративная косметика,
+                                        пар" />
                                 </div>
-                                <div class="content-coupon__text">Avon - это культовая продукция высокого качества:
-                                    декоративная косметика, пар...</div>
+                                <div class="content-coupon__text">
+                                    Avon - это культовая продукция высокого качества:
+                                    декоративная косметика, пар...
+                                </div>
                             </div>
                             <button class="actions-coupon__button button--like">
                                 <svg class="button--like-svg" width="31" height="28" viewBox="0 0 31 28" fill="none"
@@ -545,14 +544,13 @@
                                     <path class="path"
                                         d="M16.8324 26.3944C16.3549 26.563 15.5684 26.563 15.0908 26.3944C11.0178 25.004 1.91669 19.2034 1.91669 9.37196C1.91669 5.03207 5.41388 1.52083 9.72568 1.52083C12.2819 1.52083 14.5431 2.75679 15.9616 4.6669C17.3802 2.75679 19.6555 1.52083 22.1976 1.52083C26.5094 1.52083 30.0066 5.03207 30.0066 9.37196C30.0066 19.2034 20.9055 25.004 16.8324 26.3944Z"
                                         stroke="#A8A8A8" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                    </path>
+                                        stroke-linejoin="round"></path>
                                 </svg>
                             </button>
                         </div>
                     </a>
 
-                    <a href="pages/step-2.html" class="coupon">
+                    <a href="" class="coupon">
                         <div class="coupon__top">
                             <div class="coupon__icons icons-coupon">
                                 <div class="icons-coupon__icon"></div>
@@ -567,10 +565,11 @@
                         <div class="coupon__bottom">
                             <div class="coupon__content content-coupon">
                                 <div class="content-coupon__logo">
-                                    <img loading="lazy" class="content-coupon__logo-img" src="img/uvi.svg"
-                                        alt="Скидка на покупку в ювелирном магазине Ювелирочка">
+                                    <img loading="lazy" class="content-coupon__logo-img" src="../img/uvi.svg"
+                                        alt="Скидка на покупку в ювелирном магазине Ювелирочка" />
                                 </div>
-                                <div class="content-coupon__text">Скидка на покупку в ювелирном магазине Ювелирочка
+                                <div class="content-coupon__text">
+                                    Скидка на покупку в ювелирном магазине Ювелирочка
                                 </div>
                             </div>
                             <button class="actions-coupon__button button--like">
@@ -579,14 +578,13 @@
                                     <path class="path"
                                         d="M16.8324 26.3944C16.3549 26.563 15.5684 26.563 15.0908 26.3944C11.0178 25.004 1.91669 19.2034 1.91669 9.37196C1.91669 5.03207 5.41388 1.52083 9.72568 1.52083C12.2819 1.52083 14.5431 2.75679 15.9616 4.6669C17.3802 2.75679 19.6555 1.52083 22.1976 1.52083C26.5094 1.52083 30.0066 5.03207 30.0066 9.37196C30.0066 19.2034 20.9055 25.004 16.8324 26.3944Z"
                                         stroke="#A8A8A8" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                    </path>
+                                        stroke-linejoin="round"></path>
                                 </svg>
                             </button>
                         </div>
                     </a>
 
-                    <a href="pages/step-2.html" class="coupon">
+                    <a href="" class="coupon">
                         <div class="coupon__top">
                             <div class="coupon__icons icons-coupon">
                                 <div class="icons-coupon__icon icon--new"></div>
@@ -601,11 +599,13 @@
                         <div class="coupon__bottom">
                             <div class="coupon__content content-coupon">
                                 <div class="content-coupon__logo">
-                                    <img loading="lazy" class="content-coupon__logo-img" src="img/luding.svg"
-                                        alt="Скидка 35% на широкий выбор алкогольных напитков на любой вкус!">
+                                    <img loading="lazy" class="content-coupon__logo-img" src="../img/luding.svg"
+                                        alt="Скидка 35% на широкий выбор алкогольных напитков на любой вкус!" />
                                 </div>
-                                <div class="content-coupon__text">Скидка 35% на широкий выбор алкогольных напитков на
-                                    любой вкус!</div>
+                                <div class="content-coupon__text">
+                                    Скидка 35% на широкий выбор алкогольных напитков на любой
+                                    вкус!
+                                </div>
                             </div>
                             <button class="actions-coupon__button button--like">
                                 <svg class="button--like-svg" width="31" height="28" viewBox="0 0 31 28" fill="none"
@@ -613,8 +613,7 @@
                                     <path class="path"
                                         d="M16.8324 26.3944C16.3549 26.563 15.5684 26.563 15.0908 26.3944C11.0178 25.004 1.91669 19.2034 1.91669 9.37196C1.91669 5.03207 5.41388 1.52083 9.72568 1.52083C12.2819 1.52083 14.5431 2.75679 15.9616 4.6669C17.3802 2.75679 19.6555 1.52083 22.1976 1.52083C26.5094 1.52083 30.0066 5.03207 30.0066 9.37196C30.0066 19.2034 20.9055 25.004 16.8324 26.3944Z"
                                         stroke="#A8A8A8" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                    </path>
+                                        stroke-linejoin="round"></path>
                                 </svg>
                             </button>
                         </div>
@@ -622,20 +621,9 @@
                 </div>
             </div>
         </section>
-
-        <aside class="coupons-nav">
-            <div class="coupons-nav__item coupons-nav--active coupons-nav--margin">
-                <img src="img/coupon-nav.svg" alt="" class="coupon-nav__img">
-                <span class="coupon-nav__text">Купоны</span>
-            </div>
-            <div class="coupons-nav__item">
-                <img src="img/coupon-saved.svg" alt="" class="coupon-nav__img">
-                <span class="coupon-nav__text">Избранное</span>
-            </div>
-        </aside>
     </main>
 
-    <script src="scripts/main.js"></script>
+    <script src="../scripts/step-2.js"></script>
 </body>
 
 </html>
